@@ -26,12 +26,12 @@ function Vegetables(): JSX.Element {
 
 export function Fragments(): JSX.Element {
     return (
-        <>
+        <div style={{ padding: '20px' }}>
             List of fruits and vegetables:
             <ul>
                 <Fruits />
                 <Vegetables />
             </ul>
-        </>
+        </div>
     );
 }

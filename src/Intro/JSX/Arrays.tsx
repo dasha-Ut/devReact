@@ -106,3 +106,28 @@ export function Arrays(): JSX.Element {
 </div>
 </ChapterWrapper> */}
 //);
+
+export const CHARACTERS = [
+    { name: 'Harry Potter', isMain: true },
+    { name: 'Hermione Granger', isMain: true },
+    { name: 'Ron Weasley', isMain: true },
+    { name: 'Albus Dumbledore', isMain: false },
+    { name: 'Severus Snape', isMain: false },
+    { name: 'Sirius Black', isMain: false },
+    { name: 'Rubeus Hagrid', isMain: false },
+]
+
+function CharacterItem({ name, isMain }) {
+    return (<>
+        {isMain === true ? < li key={name} > {name} (main)</li > : <li>{name}</li>}
+    </>)
+}
+
+export function CharacterList() {
+    return (
+        <ul style={{ padding: '20px' }}>
+            {CHARACTERS.map(character => <CharacterItem key={character.name} {...character} />)}
+        </ul>
+    )
+}
+

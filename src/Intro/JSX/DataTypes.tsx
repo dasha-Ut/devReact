@@ -23,7 +23,7 @@ export function TitleWithSubTitle(props: propsTitleProps): JSX.Element {
 export function DataTypes(): JSX.Element {
     return (
         <>
-            <h3>Let's check how React renders different data types</h3>
+            <h3 style={{ padding: '20px' }}>Let's check how React renders different data types</h3>
             <br />
             <table>
                 <thead>

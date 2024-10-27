@@ -3,5 +3,5 @@ export function HelloWorld(): JSX.Element {
 }
 
 export const AlsoHelloWorld = (): JSX.Element => {
-    return <div>Also hello, world! 👽</div>;
+    return <div style={{ padding: '20px' }}> Also hello, world! 👽</div>;
 };
