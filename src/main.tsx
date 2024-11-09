@@ -17,6 +17,7 @@ import { DirectDomChanges } from './1-HooksBasics/CustomHooks/DirectDomChanges';
 import { EffectDependencies } from './2-SideEffects/UseEffectBasics/EffectDependencies';
 import { LocalStorageSync } from './2-SideEffects/UseEffectBasics/LocalStorageSync';
 import { UseGlobalEvents } from './2-SideEffects/UseGlobalEvents/UseGlobalEvents';
+import { UseEffectAndInterval } from './2-SideEffects/UseEffectAndInterval/UseEffectAndInterval';
 
 
 createRoot(document.getElementById('root')!).render(
@@ -37,6 +38,8 @@ createRoot(document.getElementById('root')!).render(
     <EffectDependencies />
     <LocalStorageSync />
     <UseGlobalEvents />
+
+    <UseEffectAndInterval />
   </div>
 
 )
