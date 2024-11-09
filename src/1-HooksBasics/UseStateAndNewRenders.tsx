@@ -3,7 +3,7 @@ import { PropsTable } from '../components/PropsTable';
 import { EmojiButton } from '../components/EmojiButton/EmojiButton';
 import { ColoredBlock } from '../components/ColoredBlock/ColoredBlock';
 import { ValueLabel } from '../components/ValueLabel/ValueLabel';
-//import { useRerender } from '../Hooks/useRerender';
+//import { useRerender } from '../1-HooksBasics/useRerender';
 import { useState } from 'react';
 import { logTagged } from '../utils/logTagged';
 

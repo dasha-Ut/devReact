@@ -1,7 +1,7 @@
 import { Button } from '../components/Button/Button';
 import { PropsTable } from '../components/PropsTable';
 import { FormField } from '../components/FormField';
-import { useMergedState } from '../Hooks/CustomHooks/useMergedState';
+import { useMergedState } from '../1-HooksBasics/CustomHooks/useMergedState';
 
 interface Person {
     firstName: string;

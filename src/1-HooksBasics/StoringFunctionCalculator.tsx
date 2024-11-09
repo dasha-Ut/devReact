@@ -1,6 +1,6 @@
 import { Button } from "../components/Button/Button";
 import { ChangeEvent, ChangeEventHandler, Dispatch, SetStateAction, useState } from 'react';
-import { useMergedState } from '../Hooks/CustomHooks/useMergedState';
+import { useMergedState } from '../1-HooksBasics/CustomHooks/useMergedState';
 
 type MathFunction = (a: number, b: number) => number;
 type Setter = Dispatch<SetStateAction<number>>;
