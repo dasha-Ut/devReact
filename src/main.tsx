@@ -20,6 +20,8 @@ import { UseGlobalEvents } from './2-SideEffects/UseGlobalEvents/UseGlobalEvents
 import { UseEffectAndInterval } from './2-SideEffects/UseEffectAndInterval/UseEffectAndInterval';
 import { FetchDataInUseEffect } from './2-SideEffects/FetchDataInUseEffect';
 import { BewareOfInfiniteLoops } from './2-SideEffects/InfiniteLoops/BewareOfInfiniteLoops';
+import { YouDontNeedUseEffect } from './2-SideEffects/YouDontNeedUseEffect/YouDontNeedUseEffect';
+import { UseLayoutEffectExample } from './2-SideEffects/UseLayoutEffect/UseLayoutEffectExample';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -42,6 +44,8 @@ createRoot(document.getElementById('root')!).render(
     <UseEffectAndInterval />
     <FetchDataInUseEffect />
     <BewareOfInfiniteLoops />
+    <YouDontNeedUseEffect />
+    <UseLayoutEffectExample />
   </div>
 
 )
