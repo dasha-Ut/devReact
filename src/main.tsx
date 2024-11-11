@@ -19,7 +19,7 @@ import { LocalStorageSync } from './2-SideEffects/UseEffectBasics/LocalStorageSy
 import { UseGlobalEvents } from './2-SideEffects/UseGlobalEvents/UseGlobalEvents';
 import { UseEffectAndInterval } from './2-SideEffects/UseEffectAndInterval/UseEffectAndInterval';
 import { FetchDataInUseEffect } from './2-SideEffects/FetchDataInUseEffect';
-
+import { BewareOfInfiniteLoops } from './2-SideEffects/InfiniteLoops/BewareOfInfiniteLoops';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -41,7 +41,7 @@ createRoot(document.getElementById('root')!).render(
     <UseGlobalEvents />
     <UseEffectAndInterval />
     <FetchDataInUseEffect />
-
+    <BewareOfInfiniteLoops />
   </div>
 
 )
