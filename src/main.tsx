@@ -18,6 +18,7 @@ import { EffectDependencies } from './2-SideEffects/UseEffectBasics/EffectDepend
 import { LocalStorageSync } from './2-SideEffects/UseEffectBasics/LocalStorageSync';
 import { UseGlobalEvents } from './2-SideEffects/UseGlobalEvents/UseGlobalEvents';
 import { UseEffectAndInterval } from './2-SideEffects/UseEffectAndInterval/UseEffectAndInterval';
+import { FetchDataInUseEffect } from './2-SideEffects/FetchDataInUseEffect';
 
 
 createRoot(document.getElementById('root')!).render(
@@ -38,8 +39,9 @@ createRoot(document.getElementById('root')!).render(
     <EffectDependencies />
     <LocalStorageSync />
     <UseGlobalEvents />
-
     <UseEffectAndInterval />
+    <FetchDataInUseEffect />
+
   </div>
 
 )
