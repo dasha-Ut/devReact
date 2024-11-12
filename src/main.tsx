@@ -22,6 +22,8 @@ import { FetchDataInUseEffect } from './2-SideEffects/FetchDataInUseEffect';
 import { BewareOfInfiniteLoops } from './2-SideEffects/InfiniteLoops/BewareOfInfiniteLoops';
 import { YouDontNeedUseEffect } from './2-SideEffects/YouDontNeedUseEffect/YouDontNeedUseEffect';
 import { UseLayoutEffectExample } from './2-SideEffects/UseLayoutEffect/UseLayoutEffectExample';
+import { ControlledInput } from './3-ImperativeCode/ControlledVsUncontrolled/ControlledInput';
+import { UncontrolledInput } from './3-ImperativeCode/ControlledVsUncontrolled/UncontrolledInput';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -46,6 +48,8 @@ createRoot(document.getElementById('root')!).render(
     <BewareOfInfiniteLoops />
     <YouDontNeedUseEffect />
     <UseLayoutEffectExample />
+    <ControlledInput />
+    <UncontrolledInput />
   </div>
 
 )

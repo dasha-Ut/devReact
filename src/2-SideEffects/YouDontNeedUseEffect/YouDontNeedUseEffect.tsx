@@ -27,7 +27,7 @@ export function YouDontNeedUseEffect(): JSX.Element {
     const rerender = useRerender();
 
     return (
-        <div style={{ padding: 20 }}>
+        <div>
             <Toolbar>
                 <Button text="Click me to re-render the component" onClick={rerender} />
             </Toolbar>
