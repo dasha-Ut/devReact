@@ -24,6 +24,8 @@ import { YouDontNeedUseEffect } from './2-SideEffects/YouDontNeedUseEffect/YouDo
 import { UseLayoutEffectExample } from './2-SideEffects/UseLayoutEffect/UseLayoutEffectExample';
 import { ControlledInput } from './3-ImperativeCode/ControlledVsUncontrolled/ControlledInput';
 import { UncontrolledInput } from './3-ImperativeCode/ControlledVsUncontrolled/UncontrolledInput';
+import { RockScissorsPaper } from './3-ImperativeCode/RockScissorsPaper/RockScissorsPaper';
+
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -50,6 +52,7 @@ createRoot(document.getElementById('root')!).render(
     <UseLayoutEffectExample />
     <ControlledInput />
     <UncontrolledInput />
+    <RockScissorsPaper />
   </div>
 
 )
