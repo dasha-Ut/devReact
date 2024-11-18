@@ -25,7 +25,7 @@ import { UseLayoutEffectExample } from './2-SideEffects/UseLayoutEffect/UseLayou
 import { ControlledInput } from './3-ImperativeCode/ControlledVsUncontrolled/ControlledInput';
 import { UncontrolledInput } from './3-ImperativeCode/ControlledVsUncontrolled/UncontrolledInput';
 import { RockScissorsPaper } from './3-ImperativeCode/RockScissorsPaper/RockScissorsPaper';
-
+import { StoringStateInUseRef } from './3-ImperativeCode/StoringStateInUseRef/StoringStateInUseRef';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -53,6 +53,7 @@ createRoot(document.getElementById('root')!).render(
     <ControlledInput />
     <UncontrolledInput />
     <RockScissorsPaper />
+    <StoringStateInUseRef />
   </div>
 
 )
