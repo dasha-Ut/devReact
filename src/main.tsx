@@ -26,6 +26,7 @@ import { ControlledInput } from './3-ImperativeCode/ControlledVsUncontrolled/Con
 import { UncontrolledInput } from './3-ImperativeCode/ControlledVsUncontrolled/UncontrolledInput';
 import { RockScissorsPaper } from './3-ImperativeCode/RockScissorsPaper/RockScissorsPaper';
 import { StoringStateInUseRef } from './3-ImperativeCode/StoringStateInUseRef/StoringStateInUseRef';
+import { UseImperativeHandle } from './3-ImperativeCode/ImperativeHandle/UseImperativeHandle';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -54,6 +55,7 @@ createRoot(document.getElementById('root')!).render(
     <UncontrolledInput />
     <RockScissorsPaper />
     <StoringStateInUseRef />
+    <UseImperativeHandle />
   </div>
 
 )
