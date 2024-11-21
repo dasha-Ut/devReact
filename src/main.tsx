@@ -29,6 +29,7 @@ import { StoringStateInUseRef } from './3-ImperativeCode/StoringStateInUseRef/St
 import { UseImperativeHandle } from './3-ImperativeCode/ImperativeHandle/UseImperativeHandle';
 import { ListWithMemoization } from './4-Memoization/ListWithMemoization/ListWithMemoization';
 import { ListWithoutMemoization } from './4-Memoization/ListWithoutMemoization/ListWithoutMemoization';
+import { UseUpdateEffect } from './4-Memoization/UseUpdateEffect/UseUpdateEffectExample';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -60,6 +61,7 @@ createRoot(document.getElementById('root')!).render(
     <UseImperativeHandle />
     <ListWithMemoization />
     <ListWithoutMemoization />
+    <UseUpdateEffect />
   </div>
 
 )

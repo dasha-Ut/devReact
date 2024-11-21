@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 type Callback = () => void;
 
+// виконається кожен раз крім першого
 export function useUpdateEffect(callback: Callback, deps: any[]) {
   const firstRenderRef = useRef<boolean>(true);
   const callbackRef = useRef<Callback>();
