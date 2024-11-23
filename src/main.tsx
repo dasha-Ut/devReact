@@ -30,6 +30,8 @@ import { UseImperativeHandle } from './3-ImperativeCode/ImperativeHandle/UseImpe
 import { ListWithMemoization } from './4-Memoization/ListWithMemoization/ListWithMemoization';
 import { ListWithoutMemoization } from './4-Memoization/ListWithoutMemoization/ListWithoutMemoization';
 import { UseUpdateEffect } from './4-Memoization/UseUpdateEffect/UseUpdateEffectExample';
+import { UseMemoExample } from './4-Memoization/UseMemo/UseMemoExample';
+import { WhenReactRenderComponents } from './4-Memoization/UseMemo/WhenReactRenderComponents';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -62,6 +64,8 @@ createRoot(document.getElementById('root')!).render(
     <ListWithMemoization />
     <ListWithoutMemoization />
     <UseUpdateEffect />
+    <UseMemoExample />
+    <WhenReactRenderComponents />
   </div>
 
 )

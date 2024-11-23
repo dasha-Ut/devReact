@@ -22,7 +22,9 @@ function buildStyle(left: number, top: number): CSSProperties {
 
 export function YouDontNeedUseEffect(): JSX.Element {
     const [left, top] = useBallPosition(MIN_STEP, MAX_STEP);
-    // if need get value from useState, and don't need to change it between re renders - use useMemo with params which trigger change
+    // if need get value from useState, and don't need to change it between re renders 
+    //- use useMemo with params which trigger change
+    // will rerender ONLY when props are changed or change smth from its local state 
     const style = useMemo(() => buildStyle(left, top), [left, top]);
     const rerender = useRerender();
 
