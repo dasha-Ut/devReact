@@ -32,6 +32,7 @@ import { ListWithoutMemoization } from './4-Memoization/ListWithoutMemoization/L
 import { UseUpdateEffect } from './4-Memoization/UseUpdateEffect/UseUpdateEffectExample';
 import { UseMemoExample } from './4-Memoization/UseMemo/UseMemoExample';
 import { WhenReactRenderComponents } from './4-Memoization/UseMemo/WhenReactRenderComponents';
+import { MemoizedRefCallback } from './4-Memoization/MemoizedRefCallback/MemoizedRefCallback';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -66,6 +67,7 @@ createRoot(document.getElementById('root')!).render(
     <UseUpdateEffect />
     <UseMemoExample />
     <WhenReactRenderComponents />
+    <MemoizedRefCallback />
   </div>
 
 )
