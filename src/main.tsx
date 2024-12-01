@@ -34,6 +34,8 @@ import { UseMemoExample } from './4-Memoization/UseMemo/UseMemoExample';
 import { WhenReactRenderComponents } from './4-Memoization/UseMemo/WhenReactRenderComponents';
 import { MemoizedRefCallback } from './4-Memoization/MemoizedRefCallback/MemoizedRefCallback';
 import { KeysAndLists } from './5-ComponentsLifecycle/Keys/KeysAndLists/KeysAndLists';
+import { RemountComponent } from './5-ComponentsLifecycle/Keys/RemountComponent';
+import { ComponentsStructure } from './5-ComponentsLifecycle/Keys/ComponentsStructure';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -70,6 +72,8 @@ createRoot(document.getElementById('root')!).render(
     <WhenReactRenderComponents />
     <MemoizedRefCallback />
     <KeysAndLists />
+    <RemountComponent />
+    <ComponentsStructure />
   </div>
 
 )
