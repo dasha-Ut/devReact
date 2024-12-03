@@ -36,6 +36,7 @@ import { MemoizedRefCallback } from './4-Memoization/MemoizedRefCallback/Memoize
 import { KeysAndLists } from './5-ComponentsLifecycle/Keys/KeysAndLists/KeysAndLists';
 import { RemountComponent } from './5-ComponentsLifecycle/Keys/RemountComponent';
 import { ComponentsStructure } from './5-ComponentsLifecycle/Keys/ComponentsStructure';
+import { RandomRendering } from './5-ComponentsLifecycle/RandomRendering/RandomRendering';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -74,6 +75,7 @@ createRoot(document.getElementById('root')!).render(
     <KeysAndLists />
     <RemountComponent />
     <ComponentsStructure />
+    <RandomRendering />
   </div>
 
 )
