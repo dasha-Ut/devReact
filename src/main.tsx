@@ -40,6 +40,7 @@ import { RandomRendering } from './5-ComponentsLifecycle/RandomRendering/RandomR
 import { LifecycleAndMemoization } from './5-ComponentsLifecycle/Memoization/LifecycleAndMemoization';
 import { UseCounterReducer } from './6-ContextAndReducer/UseReducer/UseCounterReducer';
 import { LazyInit2 } from './6-ContextAndReducer/LazyInit2/LazyInit2';
+import { UseToggleReducer } from './6-ContextAndReducer/UseToggle/UseToggleReducer';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -82,5 +83,6 @@ createRoot(document.getElementById('root')!).render(
     <LifecycleAndMemoization />
     <UseCounterReducer />
     <LazyInit2 />
+    <UseToggleReducer />
   </div>
 )
