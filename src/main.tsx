@@ -39,6 +39,7 @@ import { ComponentsStructure } from './5-ComponentsLifecycle/Keys/ComponentsStru
 import { RandomRendering } from './5-ComponentsLifecycle/RandomRendering/RandomRendering';
 import { LifecycleAndMemoization } from './5-ComponentsLifecycle/Memoization/LifecycleAndMemoization';
 import { UseCounterReducer } from './6-ContextAndReducer/UseReducer/UseCounterReducer';
+import { LazyInit2 } from './6-ContextAndReducer/LazyInit2/LazyInit2';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -80,5 +81,6 @@ createRoot(document.getElementById('root')!).render(
     <RandomRendering />
     <LifecycleAndMemoization />
     <UseCounterReducer />
+    <LazyInit2 />
   </div>
 )
