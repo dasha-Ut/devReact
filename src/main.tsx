@@ -41,6 +41,7 @@ import { LifecycleAndMemoization } from './5-ComponentsLifecycle/Memoization/Lif
 import { UseCounterReducer } from './6-ContextAndReducer/UseReducer/UseCounterReducer';
 import { LazyInit2 } from './6-ContextAndReducer/LazyInit2/LazyInit2';
 import { UseToggleReducer } from './6-ContextAndReducer/UseToggle/UseToggleReducer';
+import { UseContext } from './6-ContextAndReducer/UseContext/UseContext';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -84,5 +85,6 @@ createRoot(document.getElementById('root')!).render(
     <UseCounterReducer />
     <LazyInit2 />
     <UseToggleReducer />
+    <UseContext />
   </div>
 )
