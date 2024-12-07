@@ -37,7 +37,8 @@ import { KeysAndLists } from './5-ComponentsLifecycle/Keys/KeysAndLists/KeysAndL
 import { RemountComponent } from './5-ComponentsLifecycle/Keys/RemountComponent';
 import { ComponentsStructure } from './5-ComponentsLifecycle/Keys/ComponentsStructure';
 import { RandomRendering } from './5-ComponentsLifecycle/RandomRendering/RandomRendering';
-import { LifecycleAndMemoization } from './5-ComponentsLifecycle//Memoization/LifecycleAndMemoization';
+import { LifecycleAndMemoization } from './5-ComponentsLifecycle/Memoization/LifecycleAndMemoization';
+import { UseCounterReducer } from './6-ContextAndReducer/UseReducer/UseCounterReducer';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -78,6 +79,6 @@ createRoot(document.getElementById('root')!).render(
     <ComponentsStructure />
     <RandomRendering />
     <LifecycleAndMemoization />
+    <UseCounterReducer />
   </div>
-
 )
