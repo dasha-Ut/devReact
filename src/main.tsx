@@ -42,6 +42,7 @@ import { UseCounterReducer } from './6-ContextAndReducer/UseReducer/UseCounterRe
 import { LazyInit2 } from './6-ContextAndReducer/LazyInit2/LazyInit2';
 import { UseToggleReducer } from './6-ContextAndReducer/UseToggle/UseToggleReducer';
 import { UseContext } from './6-ContextAndReducer/UseContext/UseContext';
+import { ContactBook } from './6-ContextAndReducer/ContactBook/index';
 
 createRoot(document.getElementById('root')!).render(
   <div>
@@ -86,5 +87,6 @@ createRoot(document.getElementById('root')!).render(
     <LazyInit2 />
     <UseToggleReducer />
     <UseContext />
+    <ContactBook />
   </div>
 )
