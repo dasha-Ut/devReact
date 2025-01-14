@@ -1,8 +1,12 @@
 import { ChangeEventHandler, useState } from 'react';
+import { Button } from '../components/Button/Button';
+import { ChapterWrapper, } from '../components/ChapterWrapper/ChapterWrapper';
+import { Toolbar } from '../components/Toolbar/Toolbar';
+import { ValueLabel } from '../components/ValueLabel/ValueLabel';
 
 const FIBONACCI = [1, 1];
 
-export function UseStateBasics(): JSX.Element {
+export function UseStateBasics() {
     const [clicks, setClicks] = useState<number>(0);
     const [isClicksVisible, setClicksVisible] = useState<boolean>(true);
     const [someText, setSomeText] = useState<string>('');
@@ -25,35 +29,23 @@ export function UseStateBasics(): JSX.Element {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
-            <div style={{ border: '1px' }}>
-                <label>
-                    {isClicksVisible ? clicks : '?'}
-                </label>
-                <button onClick={incrementCounter} >
-                    Increment counter
-                </button>
-                <button onClick={showClicks} disabled={isClicksVisible}>
-                    Show clicks
-                </button>
-                <button onClick={hideClicks} disabled={!isClicksVisible}>
-                    Hide clicks
-                </button>
-            </div>
+        <ChapterWrapper title="What is a hook?" subtitle="Hooks basics, useState">
+            <Toolbar>
+                <ValueLabel value={isClicksVisible ? clicks : '?'} minWidth={100} />
+                <Button onClick={incrementCounter} text="Increment counter" />
+                <Button onClick={showClicks} text="Show clicks" disabled={isClicksVisible} />
+                <Button onClick={hideClicks} text="Hide clicks" disabled={!isClicksVisible} />
+            </Toolbar>
 
-            <div style={{ border: '1px' }}>
+            <Toolbar>
                 <input type="text" value={someText} onChange={onInputChange} />
-                <button onClick={clearText} >
-                    Clear
-                </button>
-            </div>
+                <Button text="Clear" onClick={clearText} />
+            </Toolbar>
 
-            <div style={{ border: '1px' }}>
-                <button onClick={addFibonacci} >
-                    Add Fibonacci number
-                </button>
-            </div>
+            <Toolbar>
+                <Button text="Add Fibonacci number" onClick={addFibonacci} />
+            </Toolbar>
             <div>Fibonacci sequence: {fibonacci.join(', ')}</div>
-        </div>
+        </ChapterWrapper>
     );
 }

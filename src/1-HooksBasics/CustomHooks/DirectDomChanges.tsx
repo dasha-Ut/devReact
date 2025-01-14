@@ -1,15 +1,16 @@
 import { Button } from '../../components/Button/Button';
 import { ValueLabel } from '../../components/ValueLabel/ValueLabel';
 import { Toolbar } from '../../components/Toolbar/Toolbar';
-//import { useRerender } from 'hooks/useRerender';
+import { ChapterWrapper } from '../../components/ChapterWrapper/ChapterWrapper';
+import { useRerender } from 'hooks/useRerender';
 import { useState } from 'react';
 import { generateRandomColor } from '../../utils/generateRandomColor';
 import { v4 as uuidv4 } from 'uuid';
 
 const NODE_ID = 'value-label-container';
 
-export function DirectDomChanges(): JSX.Element {
-    //const rerender = useRerender();
+export function DirectDomChanges() {
+    const rerender = useRerender();
     const [uid, setUid] = useState<string>(() => uuidv4());
     const [bgColor, setBgColor] = useState<string>(() => generateRandomColor());
 
@@ -40,7 +41,11 @@ export function DirectDomChanges(): JSX.Element {
     console.log(`%c bgColor `, messageStyle);
 
     return (
-        <div>
+        <ChapterWrapper
+            title="Direct DOM changes"
+            subtitle="Hooks basics, useState"
+            rerender={rerender}
+        >
             <Toolbar>
                 <Button text="New UID" onClick={changeUid} />
                 <Button text="New color" onClick={changeBgColor} />
@@ -49,6 +54,6 @@ export function DirectDomChanges(): JSX.Element {
             <div id={NODE_ID} style={{ backgroundColor: bgColor, borderRadius: 8 }}>
                 <ValueLabel value={uid} />
             </div>
-        </div>
+        </ChapterWrapper>
     );
 }

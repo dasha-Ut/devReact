@@ -1,5 +1,5 @@
 import { IntroSection } from './0-Intro/IntroSection';
-//import { HooksBasicsSection } from './1-HooksBasics/HooksBasicsSection';
+import { HooksBasicsSection } from './1-HooksBasics/HooksBasicsSection';
 //import { MoreCustomHooksSection } from '10-MoreCustomHooks/MoreCustomHooksSection';
 //import { React19Section } from '11-React19/React19Section';
 // import { SideEffectsSection } from '2-SideEffects/SideEffectsSection';
@@ -16,6 +16,7 @@ export function App() {
   return (
     <MasterDetail>
       <IntroSection />
+      <HooksBasicsSection />
       <MemoizationSection />
       <StateManagementSection />
       {/* <HooksBasicsSection />

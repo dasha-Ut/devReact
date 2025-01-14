@@ -1,4 +1,6 @@
-import { Button } from "../components/Button/Button";
+import { Button } from '../components/Button/Button';
+import { ChapterWrapper } from '../components/ChapterWrapper/ChapterWrapper';
+import { Toolbar } from '../components/Toolbar/Toolbar';
 import { ChangeEvent, ChangeEventHandler, Dispatch, SetStateAction, useState } from 'react';
 import { useMergedState } from '../1-HooksBasics/CustomHooks/useMergedState';
 
@@ -56,7 +58,7 @@ export function Calculator(): JSX.Element {
     }
 
     return (
-        <>
+        <ChapterWrapper title="Storing function in useState" subtitle="Hooks basics, useState">
             <div style={{ paddingTop: 19 }}>
                 <Button onClick={buildClickHandler(add)} disabled={false} text={add.name}></Button>
                 <Button onClick={buildClickHandler(subtract)} disabled={false} text={subtract.name}></Button>
@@ -73,6 +75,6 @@ export function Calculator(): JSX.Element {
 
                 <span> = {data.fn ? data.fn(a, b) : ''}</span>
             </div>
-        </>
+        </ChapterWrapper>
     )
 }

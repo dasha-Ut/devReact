@@ -1,4 +1,6 @@
 import { Button } from '../../components/Button/Button';
+import { ChapterWrapper } from '../../components/ChapterWrapper/ChapterWrapper';
+import { Toolbar } from '../../components/Toolbar/Toolbar';
 import { useState } from 'react';
 import { HeaderRow } from '../LazyInitialisation/HeaderRow';
 import { Row } from '../LazyInitialisation/Row';
@@ -59,7 +61,7 @@ export function LazyInitialization(): JSX.Element {
         });
 
     return (
-        <>
+        <ChapterWrapper title="Lazy initialization" subtitle="Hooks basics, useState">
             <h3 style={{ paddingTop: 19 }}>Lazy initialization</h3>
             <h5>Hooks basics, useState </h5>
             <div>
@@ -78,6 +80,6 @@ export function LazyInitialization(): JSX.Element {
                     ))}
                 </tbody>
             </table>
-        </>
+        </ChapterWrapper>
     );
 }
