@@ -1,6 +1,5 @@
-
-
-import { renderValues } from './renderValues';
+import { ChapterWrapper } from '../../components/ChapterWrapper/ChapterWrapper';
+import { renderValues } from './RenderValues';
 
 interface propsTitleProps {
     title: string;
@@ -22,7 +21,7 @@ export function TitleWithSubTitle(props: propsTitleProps): JSX.Element {
 
 export function DataTypes(): JSX.Element {
     return (
-        <>
+        <ChapterWrapper title="Data types" subtitle="Introduction to JSX">
             <h3 style={{ padding: '20px' }}>Let's check how React renders different data types</h3>
             <br />
             <table>
@@ -47,6 +46,6 @@ export function DataTypes(): JSX.Element {
                     ))}
                 </tbody>
             </table>
-        </>
+        </ChapterWrapper>
     );
 }

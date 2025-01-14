@@ -1,4 +1,5 @@
 import { createElement } from 'react';
+import { ChapterWrapper } from '../../components/ChapterWrapper/ChapterWrapper';
 
 export function ReactWithoutJsx() {
   const props = {
@@ -10,15 +11,15 @@ export function ReactWithoutJsx() {
       `You don't have to use JSX, but the code is much harder to work without it.`
     ),
   };
-  return createElement('div', props);
+  return createElement(ChapterWrapper, props);
 }
 
 export function SameThingWithJsx(): JSX.Element {
   return (
-    <>
+    <ChapterWrapper title="Same thing with JSX" subtitle="Introduction to JSX">
       <p style={{ fontSize: '18px' }}>
         You don't have to use JSX, but the code is much harder to read without it.
       </p>
-    </>
+    </ChapterWrapper>
   );
 }

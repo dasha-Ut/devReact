@@ -1,12 +1,13 @@
 .button {
     background-color: white;
     padding: 10px 20px;
-    border: 2px solid #bbbbbb;
-    box-shadow: var(--box-shadow);
+    border: 1px solid #D4D3D3;
+    /* box-shadow: var(--box-shadow); */
     font-size: 16px;
     font-weight: 400;
     outline: none;
   }
+  
   
   .button:hover {
     box-shadow: var(--active-box-shadow);

@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type */
 import { useCallback, useState } from 'react';
 
 export function useRerender() {
-  const [, setState] = useState<{}>();
+    const [, setDummyState] = useState<{}>();
 
-  const rerender = useCallback(() => setState({}), []);
+    const rerender = useCallback(() => setDummyState({}), []);
 
-  return rerender;
+    return rerender;
 }
