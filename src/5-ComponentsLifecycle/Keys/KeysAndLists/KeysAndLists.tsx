@@ -1,23 +1,25 @@
 import { TextBlock } from '../../../components/TextBlock/TextBlock';
-
+import { ChapterWrapper } from '../../../components/ChapterWrapper/ChapterWrapper';
 import { generateItems, Item } from './Item';
 import classes from './KeysAndLists.module.css';
 import { List } from './List';
 
-export function KeysAndLists(): JSX.Element {
+export function KeysAndLists() {
     const generateInitialItems = () => generateItems(10);
 
     const getIndexKey = (item: Item, index: number) => index;
     const getIdKey = (item: Item) => item.id;
 
     return (
-        <div> Keys & lists,Key property
+        <ChapterWrapper title="Keys & lists" subtitle="Key property">
             <TextBlock>
                 <div>
-                    ❗️ DO NOT use <code>index</code> property as React <code>key</code> if the order of items
-                    will be changed.
+                    ❗️ DO NOT use <code>index</code> property as React <code>key</code> if the order
+                    of items will be changed.
                 </div>
-                <div>🚮 Click on the list item to remove it. Note how many items were re-rendered.</div>
+                <div>
+                    🚮 Click on the list item to remove it. Note how many items were re-rendered.
+                </div>
             </TextBlock>
 
             <div className={classes.twoColumns}>
@@ -29,6 +31,6 @@ export function KeysAndLists(): JSX.Element {
                 <List generateItems={generateInitialItems} getKey={getIndexKey} />
                 <List generateItems={generateInitialItems} getKey={getIdKey} />
             </div>
-        </div>
+        </ChapterWrapper>
     );
 }

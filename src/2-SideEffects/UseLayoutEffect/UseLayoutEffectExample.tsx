@@ -1,5 +1,5 @@
 import { MouseEventHandler, useLayoutEffect, useState } from 'react';
-
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 import { ClickDots, CONTAINER_ID } from './ClicksDots';
 import { Dot, DOT_ZERO } from './Dot';
 
@@ -36,6 +36,11 @@ export function UseLayoutEffectExample() {
     }, [eventDot]);
 
     return (
-        <ClickDots blueDot={clickDot} pinkDot={effectDot} onClick={handleClick} />
+        <ChapterWrapper
+            title="Batching effects with useLayoutEffect"
+            subtitle="useEffect vs useLayoutEffect"
+        >
+            <ClickDots blueDot={clickDot} pinkDot={effectDot} onClick={handleClick} />
+        </ChapterWrapper>
     );
 }

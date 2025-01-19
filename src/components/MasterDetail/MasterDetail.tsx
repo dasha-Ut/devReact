@@ -9,6 +9,7 @@ import classes from './MasterDetail.module.css';
 import { MasterDetailContext } from './MasterDetailContext';
 import { useContextValue } from './useContextValue';
 import { WelcomeScreen } from './WelcomeScreen/WelcomeScreen';
+import 'index.css'
 
 const COLLAPSED_WIDTH = '44px';
 
@@ -26,13 +27,13 @@ export function MasterDetail({ children }: { children: ReactNode }) {
         <BrowserRouter basename="/dev-react">
             <div className={classes.container}>
                 <nav className={classes.master} style={buildMasterStyle(expanded)}>
-                    <div className={classes.masterTitle}>
-                        <ExpandToggle expanded={expanded} onClick={toggleExpanded} />
+                    <div className={classes.masterTitle + " " + "relative"}>
                         {expanded && (
                             <NavLink to={RouterPath.ROOT} className={classes.titleLink}>
-                                <h2>Mastering React</h2>
+                                <h3>Home</h3>
                             </NavLink>
                         )}
+                        <ExpandToggle expanded={expanded} onClick={toggleExpanded} sideNav={true} />
                     </div>
                     {expanded && (
                         <div className={classes.tableOfContents}>

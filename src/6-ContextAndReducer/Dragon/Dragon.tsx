@@ -1,5 +1,4 @@
-//import { ChapterWrapper } from 'components';
-
+import { ChapterWrapper } from '../../components/ChapterWrapper/ChapterWrapper';
 import { GameContextProvider } from './GameContext/GameContext';
 import { GameController } from './GameController/GameController';
 import { GameControls } from './GameControls/GameControls';
@@ -8,9 +7,9 @@ import { SettingsContextProvider } from './Settings/SettingsContext';
 import { SettingsToolbar } from './Settings/SettingsToolbar';
 import classes from './Dragon.module.css';
 
-export function Dragon(): JSX.Element {
+export function Dragon() {
     return (
-        <div> Dragon-useContext + useReducer
+        <ChapterWrapper title="Vegan Dragon" subtitle="useContext + useReducer">
             <div className={classes.root}>
                 <SettingsContextProvider>
                     <SettingsToolbar />
@@ -23,6 +22,6 @@ export function Dragon(): JSX.Element {
                     </div>
                 </SettingsContextProvider>
             </div>
-        </div>
+        </ChapterWrapper>
     );
 }

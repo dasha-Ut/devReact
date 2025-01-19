@@ -6,7 +6,7 @@ export interface UseCounter {
     decrease: () => void;
 }
 
-export function UseCounter(initialValue = 0, delta = 1): UseCounter {
+export function useCounter(initialValue = 0, delta = 1): UseCounter {
     const [value, setValue] = useState<number>(initialValue);
 
     const increase = () => setValue((prevValue) => prevValue + delta);

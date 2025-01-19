@@ -1,10 +1,9 @@
 import { Button } from '../../components/Button/Button';
 import { Toolbar } from '../../components/Toolbar/Toolbar';
-
 import { useRerender } from '../../hooks/useRerender';
 import { CSSProperties, useMemo } from 'react';
-
 import { useBallPosition } from '../YouDontNeedUseEffect/useBallPosition';
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 
 const MIN_STEP = 20;
 const MAX_STEP = 100;
@@ -20,7 +19,7 @@ function buildStyle(left: number, top: number): CSSProperties {
     };
 }
 
-export function YouDontNeedUseEffect(): JSX.Element {
+export function YouDontNeedUseEffect() {
     const [left, top] = useBallPosition(MIN_STEP, MAX_STEP);
     // if need get value from useState, and don't need to change it between re renders 
     //- use useMemo with params which trigger change
@@ -29,7 +28,7 @@ export function YouDontNeedUseEffect(): JSX.Element {
     const rerender = useRerender();
 
     return (
-        <div>
+        <ChapterWrapper title="You don't need useEffect" subtitle="Side effects, useEffect">
             <Toolbar>
                 <Button text="Click me to re-render the component" onClick={rerender} />
             </Toolbar>
@@ -38,6 +37,6 @@ export function YouDontNeedUseEffect(): JSX.Element {
             <div style={{ position: 'relative' }}>
                 <div style={style}>⚽️</div>
             </div>
-        </div>
+        </ChapterWrapper>
     );
 }

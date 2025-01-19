@@ -1,7 +1,7 @@
-import { UseCounter } from '../CustomHooks/UseCounter';
-
-function ClicksCounter(): JSX.Element {
-    const { value: clicks, increase } = UseCounter(0, 5);
+import { useCounter } from './UseCounter';
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
+function ClicksCounter() {
+    const { value: clicks, increase } = useCounter(0, 5);
     const text = 'Click me! '.repeat(clicks + 1);
     return (
         <div style={{ padding: 16, cursor: 'pointer', userSelect: 'none' }} onClick={() => increase()}>
@@ -10,8 +10,8 @@ function ClicksCounter(): JSX.Element {
     );
 }
 
-function DecadePicker({ initialValue }: { initialValue: number }): JSX.Element {
-    const { value: year, increase, decrease } = UseCounter(initialValue, 10);
+function DecadePicker({ initialValue }: { initialValue: number }) {
+    const { value: year, increase, decrease } = useCounter(initialValue, 10);
     return (
         <div style={{ padding: 10 }}>
             <div style={{ fontSize: 24 }}>Pick a decade:</div>
@@ -28,14 +28,11 @@ function DecadePicker({ initialValue }: { initialValue: number }): JSX.Element {
     );
 }
 
-export function UseCounterExample(): JSX.Element {
+export function UseCounterExample() {
     return (
-        <>
-            <h3 style={{ padding: '20px' }}>useCounter</h3>
-            <h5 style={{ padding: '20px' }}>First custom hooks</h5>
-
+        <ChapterWrapper title="useCounter" subtitle="First custom hooks">
             <ClicksCounter />
             <DecadePicker initialValue={1970} />
-        </>
+        </ChapterWrapper>
     );
 }

@@ -1,11 +1,11 @@
 import { TextBlock } from '../../components/TextBlock/TextBlock';
 import { Button } from "../../components/Button/Button";
 import { Toolbar } from '../../components/Toolbar/Toolbar';
-
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 import { capitalize } from 'lodash';
 import { ChangeEventHandler, useRef, useState } from 'react';
 
-export function UncontrolledInput(): JSX.Element {
+export function UncontrolledInput() {
     const [text, setText] = useState<string>('');
     const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -32,7 +32,7 @@ export function UncontrolledInput(): JSX.Element {
     const focus = () => inputRef.current?.focus();
 
     return (
-        <div>
+        <ChapterWrapper title="Uncontrolled input" subtitle="Controlled vs uncontrolled">
             <TextBlock>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <span style={{ fontSize: 24 }}>ℹ️</span> State is managed by real DOM
@@ -40,7 +40,12 @@ export function UncontrolledInput(): JSX.Element {
             </TextBlock>
 
             <Toolbar>
-                <input ref={inputRef} type="text" defaultValue="default text" onChange={handleChange} />
+                <input
+                    ref={inputRef}
+                    type="text"
+                    defaultValue="default text"
+                    onChange={handleChange}
+                />
             </Toolbar>
 
             <Toolbar>
@@ -53,6 +58,6 @@ export function UncontrolledInput(): JSX.Element {
             <Toolbar>
                 Current value: <strong>{text}</strong>
             </Toolbar>
-        </div>
+        </ChapterWrapper>
     );
 }

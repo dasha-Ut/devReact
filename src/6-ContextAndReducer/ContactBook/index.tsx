@@ -1,16 +1,15 @@
-//import { ChapterWrapper } from 'components';
-
+import { ChapterWrapper } from '../../components/ChapterWrapper/ChapterWrapper';
 import { ContactsProvider } from './ContactsContext';
 import { ContactsList } from './ContactsList';
 import { ContactsToolbar } from './ContactsToolbar';
 
-export function ContactBook(): JSX.Element {
+export function ContactBook() {
     return (
-        <div> Contact book - useContext + useReducer
+        <ChapterWrapper title="Contact book" subtitle="useContext + useReducer">
             <ContactsProvider>
                 <ContactsToolbar />
                 <ContactsList />
             </ContactsProvider>
-        </div>
+        </ChapterWrapper>
     );
 }

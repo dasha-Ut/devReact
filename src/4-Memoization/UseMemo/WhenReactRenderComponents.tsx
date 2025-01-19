@@ -1,7 +1,7 @@
 import { ColoredBlock } from '../../components/ColoredBlock/ColoredBlock';
 import { useRerender } from '../../hooks/useRerender';
 import { MouseEventHandler } from 'react';
-
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 import { Leaf } from './Leaf';
 import { nodeStyle } from './nodeStyle';
 
@@ -11,7 +11,7 @@ interface NodeProps {
     path: string[];
 }
 
-function Node({ level, maxLevel, path }: NodeProps): JSX.Element {
+function Node({ level, maxLevel, path }: NodeProps) {
     const rerender = useRerender();
 
     const handleClick: MouseEventHandler = (event) => {
@@ -31,11 +31,14 @@ function Node({ level, maxLevel, path }: NodeProps): JSX.Element {
     );
 }
 
-export function WhenReactRenderComponents(): JSX.Element {
+export function WhenReactRenderComponents() {
     return (
-        <div>
-            When React render components
+        <ChapterWrapper
+            title="useMemo"
+            subtitle="When React render components?"
+            rerender={useRerender()}
+        >
             <Node level={0} maxLevel={2} path={['root']} />
-        </div>
+        </ChapterWrapper>
     );
 }

@@ -1,6 +1,7 @@
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { Counter } from '../../2-SideEffects/UseEffectBasics/Counter';
 import { useCallback } from 'react';
+import { ChapterWrapper } from '../../components/ChapterWrapper/ChapterWrapper';
 
 const DELTA = 1;
 const STORAGE_KEY = 'chapter-6-current-count';
@@ -17,7 +18,8 @@ export function LocalStorageSync() {
     }, [setCount]);
 
     return (
-        <Counter value={count} delta={DELTA} increase={increase} decrease={decrease} />
-
+        <ChapterWrapper title="Local storage sync" subtitle="useEffect basics">
+            <Counter value={count || 0} delta={DELTA} increase={increase} decrease={decrease} />
+        </ChapterWrapper>
     );
 }

@@ -1,11 +1,11 @@
 import { TextBlock } from '../../components/TextBlock/TextBlock';
 import { Button } from "../../components/Button/Button";
 import { Toolbar } from '../../components/Toolbar/Toolbar';
-
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 import { capitalize } from 'lodash';
 import { ChangeEventHandler, useRef, useState } from 'react';
 
-export function ControlledInput(): JSX.Element {
+export function ControlledInput() {
     const [text, setText] = useState<string>('');
     const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -20,10 +20,11 @@ export function ControlledInput(): JSX.Element {
     const focus = () => inputRef.current?.focus();
 
     return (
-        <div>
+        <ChapterWrapper title="Controlled input" subtitle="Controlled vs uncontrolled">
             <TextBlock>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <span style={{ fontSize: 24 }}>ℹ️</span> State is managed by React (Virutal DOM side)
+                    <span style={{ fontSize: 24 }}>ℹ️</span> State is managed by React (Virutal DOM
+                    side)
                 </div>
             </TextBlock>
 
@@ -41,6 +42,6 @@ export function ControlledInput(): JSX.Element {
             <Toolbar>
                 Current value: <strong>{text}</strong>
             </Toolbar>
-        </div>
+        </ChapterWrapper>
     );
 }

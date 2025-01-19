@@ -1,10 +1,10 @@
 import { Button } from '../../components/Button/Button';
 import { FlexRow } from '../../components/FlexRow/FlexRow';
 import { Toolbar } from '../../components/Toolbar/Toolbar';
-//import { useRerender } from 'hooks/useRerender';
+import { useRerender } from 'hooks/useRerender';
 import { useToggle } from '../../hooks/useToggle';
-import { useState } from 'react';
-
+import { JSX, useState } from 'react';
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 import { BlockMemoizedRefCallback } from './BlockMemoizedRefCallback';
 import { BlockProps } from './BlockProps';
 import { BlockRefCallback } from './BlockRefCallback';
@@ -12,12 +12,12 @@ import { BlockUseRef } from './BlockUseRef';
 
 type ComponentType = (props: BlockProps) => JSX.Element;
 
-export function MemoizedRefCallback(): JSX.Element {
-    // const rerender = useRerender();
+export function MemoizedRefCallback() {
+    const rerender = useRerender();
     const [BlockComponent, setBlockComponent] = useState<ComponentType>(() => BlockUseRef);
     const [visible, toggleVisibility] = useToggle(true);
 
-    const componentButton = (text: string, component: ComponentType): JSX.Element => (
+    const componentButton = (text: string, component: ComponentType) => (
         <Button
             text={text}
             onClick={() => setBlockComponent(() => component)}
@@ -26,7 +26,7 @@ export function MemoizedRefCallback(): JSX.Element {
     );
 
     return (
-        <div> Memoized ref callback-Memoization
+        <ChapterWrapper title="Memoized ref callback" subtitle="Memoization" rerender={rerender}>
             <h3>Choose block component</h3>
             <Toolbar>
                 {componentButton('useRef', BlockUseRef)}
@@ -53,6 +53,6 @@ export function MemoizedRefCallback(): JSX.Element {
                 <BlockComponent visible={visible} />
                 <BlockComponent visible={visible} />
             </FlexRow>
-        </div>
+        </ChapterWrapper>
     );
 }

@@ -1,6 +1,6 @@
 import { Toolbar } from '../../components/Toolbar/Toolbar';
 import { useEffect, useState } from 'react';
-
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 import { WindowSizePreview } from '../../2-SideEffects/UseGlobalEvents/WindowSizePreview';
 
 const STEP = 10;
@@ -28,9 +28,9 @@ export function UseGlobalEvents(): JSX.Element {
     }, []);
 
     return (
-        <div>
+        <ChapterWrapper title="Listening to global events" subtitle="Side effects, useEffect">
             <Toolbar>Use ⬅️ ➡️ to change the preview window size.</Toolbar>
             <WindowSizePreview previewWidth={previewWidth} />
-        </div>
+        </ChapterWrapper>
     );
 }

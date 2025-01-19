@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 
-function Fruits(): JSX.Element {
+function Fruits() {
     return (
         <Fragment>
             <li>apple 🍎</li>
@@ -12,7 +13,7 @@ function Fruits(): JSX.Element {
     );
 }
 
-function Vegetables(): JSX.Element {
+function Vegetables() {
     return (
         <>
             <li>tomato 🍅</li>
@@ -24,14 +25,14 @@ function Vegetables(): JSX.Element {
     );
 }
 
-export function Fragments(): JSX.Element {
+export function Fragments() {
     return (
-        <div style={{ padding: '20px' }}>
+        <ChapterWrapper title="Fragments" subtitle="Introduction to JSX">
             List of fruits and vegetables:
             <ul>
                 <Fruits />
                 <Vegetables />
             </ul>
-        </div>
+        </ChapterWrapper>
     );
 }

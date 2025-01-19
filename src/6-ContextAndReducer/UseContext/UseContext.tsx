@@ -1,14 +1,14 @@
+import { ChapterWrapper } from '../../components/ChapterWrapper/ChapterWrapper';
 import { Toolbar } from '../../components/Toolbar/Toolbar';
-
 import { ThemeButton } from './Theme/ThemeButton';
 import { ThemeProvider } from './Theme/ThemeContext';
 import { ThemeToolbar } from './Theme/ThemeToolbar';
 import { UserProvider } from './User/UserContext';
 import { UserProfile } from './User/UserProfile';
 
-export function UseContext(): JSX.Element {
+export function UseContext() {
     return (
-        <div> useContext - Solving the props drilling problem
+        <ChapterWrapper title="useContext" subtitle="Solving the props drilling problem">
             <ThemeProvider>
                 {/* you can get current theme in any component in this subtree */}
                 <ThemeToolbar />
@@ -21,6 +21,6 @@ export function UseContext(): JSX.Element {
                     <UserProfile />
                 </UserProvider>
             </ThemeProvider>
-        </div>
+        </ChapterWrapper>
     );
 }

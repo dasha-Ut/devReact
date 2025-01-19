@@ -32,8 +32,9 @@ export function Section({ title, children }: SectionProps) {
                 className={cn(classes.sectionTitle, expanded && classes.expanded)}
                 onClick={toggleExpanded}
             >
-                <ExpandToggle expanded={expanded} />
                 <div>{title}</div>
+                <ExpandToggle expanded={expanded} />
+
             </div>
             <div className={classes.sectionContent} style={contentStyle}>
                 {children}

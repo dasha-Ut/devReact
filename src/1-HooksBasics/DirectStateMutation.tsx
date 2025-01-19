@@ -1,8 +1,12 @@
 import { PropsTable } from "../components/PropsTable";
 import { useState, Dispatch, SetStateAction, ChangeEventHandler, ChangeEvent } from 'react';
+import { ChapterWrapper } from "components/ChapterWrapper/ChapterWrapper";
+import { Toolbar } from "components/Toolbar/Toolbar";
+import { Label } from "components/Label/Label";
+import { Button } from "components/Button/Button";
+import { EmojiButton } from "components/EmojiButton/EmojiButton";
 
-
-interface User {
+type User = {
     id: string;
     firstName: string;
     middleName?: string;
@@ -10,69 +14,79 @@ interface User {
     country: string;
     addressLine1: string;
     addressLine2?: string;
-}
+};
 
-const initialValue: User = {
+const INITIAL_VALUE: User = {
     id: '1',
     firstName: 'Taras',
     middleName: 'Hryhorovych',
     lastName: 'Shevchenko',
     country: 'Ukraine',
     addressLine1: 'Cherkasy',
-
 };
 
-
 function buildChangeHandler(
-    setter: Dispatch<SetStateAction<string>>
+    setter: Dispatch<SetStateAction<string>>,
 ): ChangeEventHandler<HTMLInputElement> {
     return (event: ChangeEvent<HTMLInputElement>) => {
         setter(event.target.value);
     };
 }
 
-
-export function DirectStateMutation(): JSX.Element {
-
-    const [user, setUser] = useState<User>(initialValue);
+export function DirectStateMutation() {
+    const [user, setUser] = useState<User>(INITIAL_VALUE);
     const [addressLine1, setAddressLine1] = useState<string>('');
-    const [firstName, setFirstName] = useState<string>('');
+    const [addressLine2, setAddressLine2] = useState<string>('');
+    const [userEmoji, setUserEmoji] = useState<string>('👤');
 
-    const applyAddress = () => {
+    const applyLine1 = () => {
         setUser((value) => ({
             ...value,
             addressLine1,
         }));
     };
 
-    const applyFirstName = () => {
-        setUser((value) => ({
-            ...value,
-            firstName,
-        }));
+    const applyLine2 = () => {
+        // ! the bad way to modify state, don't do that !
+        user.addressLine2 = addressLine2;
     };
 
     return (
-        <div style={{ padding: '20px' }}>
+        <ChapterWrapper title="Direct state mutation" subtitle="Hooks basics, useState">
+            <Toolbar>
+                <Label text="Address line 1" />
+                <input
+                    type="text"
+                    value={addressLine1}
+                    onChange={buildChangeHandler(setAddressLine1)}
+                />
+                <Button text="Apply via setState" onClick={applyLine1} />
+            </Toolbar>
 
-            <div style={{ paddingTop: '20px' }}>
-                <label> Set address</label>
-                <input type="text" value={addressLine1} onChange={buildChangeHandler(setAddressLine1)} />
-                <button onClick={applyAddress} >
-                    {'Apply set address'}
-                </button>
-            </div>
+            <Toolbar>
+                <Label text="Address line 2" />
+                <input
+                    type="text"
+                    value={addressLine2}
+                    onChange={buildChangeHandler(setAddressLine2)}
+                />
+                <Button text="Apply directly" onClick={applyLine2} />
+            </Toolbar>
 
-            <div style={{ paddingTop: '20px' }}>
-                <label> Set firstName</label>
-                <input type="text" value={firstName} onChange={buildChangeHandler(setFirstName)} />
-                <button onClick={applyFirstName} >
-                    {'Apply set firstName'}
-                </button>
-            </div>
+            <Toolbar>
+                <EmojiButton
+                    emoji="👤"
+                    onClick={() => setUserEmoji('👤')}
+                    disabled={userEmoji === '👤'}
+                />
+                <EmojiButton
+                    emoji="🥷"
+                    onClick={() => setUserEmoji('🥷')}
+                    disabled={userEmoji === '🥷'}
+                />
+            </Toolbar>
 
-
-            <PropsTable title={`👤 User`} data={user} />
-        </div>
-    )
+            <PropsTable title={`${userEmoji} User`} data={user} />
+        </ChapterWrapper>
+    );
 }

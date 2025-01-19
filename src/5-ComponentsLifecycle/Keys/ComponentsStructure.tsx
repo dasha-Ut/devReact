@@ -2,10 +2,10 @@ import { EmojiButton } from '../../components/EmojiButton/EmojiButton';
 import { LoggedLifecycle } from '../../components/LoggedLifecycle';
 import { TextBlock } from '../../components/TextBlock/TextBlock';
 import { Toolbar } from '../../components/Toolbar/Toolbar';
-
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 import { useToggle } from '../../hooks/useToggle';
 
-export function ComponentsStructure(): JSX.Element {
+export function ComponentsStructure() {
     const [isToggled, toggle] = useToggle(true);
 
     const hedgehog = (
@@ -15,7 +15,7 @@ export function ComponentsStructure(): JSX.Element {
     );
 
     return (
-        <div>Components structure ,Key property
+        <ChapterWrapper title="Components structure" subtitle="Key property">
             <TextBlock>
                 <div>
                     ℹ️ <code>key</code> property only makes sense in the scope of a single parent.
@@ -27,6 +27,6 @@ export function ComponentsStructure(): JSX.Element {
             <Toolbar>
                 {isToggled ? hedgehog : <div style={{ transform: 'scaleX(-1)' }}>{hedgehog}</div>}
             </Toolbar>
-        </div>
+        </ChapterWrapper>
     );
 }

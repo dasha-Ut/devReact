@@ -45,7 +45,7 @@ const multiply: CalculatorBtn = {
 }
 
 
-export function Calculator(): JSX.Element {
+export function Calculator() {
     const [data, setData] = useMergedState<CalculatorBtn>(add);
     const [a, setA] = useState<number>(0);
     const [b, setB] = useState<number>(0);

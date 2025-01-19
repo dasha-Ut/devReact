@@ -1,16 +1,18 @@
 import { TextBlock } from '../../components/TextBlock/TextBlock';
-//import { useRerender } from '../../hooks/useRerender';
-
+import { useRerender } from '../../hooks/useRerender';
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 import { Child } from './Child';
 import { RandomContainer } from './RandomContainer';
 
 const EMOJIS = ['🏍', '✈️', '🚀', '🏎'];
 
-export function RandomRendering(): JSX.Element {
+export function RandomRendering() {
     return (
-        <div>
-            Random container - Components lifecycle
-
+        <ChapterWrapper
+            title="Random container"
+            subtitle="Components lifecycle"
+            rerender={useRerender()}
+        >
             <TextBlock>
                 <div>
                     ℹ️ If you pass a child component to some custom container component, there is no guarantee
@@ -24,6 +26,6 @@ export function RandomRendering(): JSX.Element {
                     <Child key={emoji} tag={emoji} />
                 ))}
             </RandomContainer>
-        </div >
+        </ChapterWrapper >
     );
 }

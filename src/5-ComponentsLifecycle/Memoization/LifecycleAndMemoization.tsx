@@ -1,16 +1,16 @@
 import { ColoredBlock } from '../../components/ColoredBlock/ColoredBlock';
 import { LoggedLifecycle } from '../../components/LoggedLifecycle';
 import { TextBlock } from '../../components/TextBlock/TextBlock';
-//import { useRerender } from 'hooks/useRerender';
+import { useRerender } from 'hooks/useRerender';
 import { memo, useCallback, useMemo } from 'react';
-
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 import { MemoRenderFunc } from './MemoRenderFunc';
 import { MemoText } from './MemoText';
 
 const MemoLoggedLifecycle = memo(LoggedLifecycle);
 
-export function LifecycleAndMemoization(): JSX.Element {
-    // const rerender = useRerender();
+export function LifecycleAndMemoization() {
+    const rerender = useRerender();
 
     // memoized JSX Element
     const useMemoText = useMemo(
@@ -32,7 +32,7 @@ export function LifecycleAndMemoization(): JSX.Element {
     );
 
     return (
-        <div> Memoization - subtitle- Components lifecycle
+        <ChapterWrapper title="Memoization" subtitle="Components lifecycle" rerender={rerender}>
             <TextBlock>
                 <div>ℹ️ Each of these lines was rendered in a different way.</div>
                 <div>ℹ️ You can achieve similar results in so many different ways with React.</div>
@@ -76,6 +76,6 @@ export function LifecycleAndMemoization(): JSX.Element {
                 <MemoRenderFunc tag="6. MemoRenderFunc" renderContent={memoizedRenderFunc} />
                 <br />
             </ColoredBlock>
-        </div>
+        </ChapterWrapper>
     );
 }

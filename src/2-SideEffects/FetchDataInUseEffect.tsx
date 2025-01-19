@@ -2,13 +2,14 @@ import { LoadingSpinner } from '../components/LoadingSpinner/LoadingSpinner';
 import { ChangeEventHandler, useEffect, useState } from 'react';
 import { Toolbar } from '../components/Toolbar/Toolbar';
 import { PropsTable } from '../components/PropsTable';
+import { ChapterWrapper } from '../components/ChapterWrapper/ChapterWrapper';
 
 type PostData = Record<string, any>;
 
 const ENDPOINT = 'https://jsonplaceholder.typicode.com/posts';
 const STATUS_OK = 200;
 
-export function FetchDataInUseEffect(): JSX.Element {
+export function FetchDataInUseEffect() {
     const [postId, setPostId] = useState<string>('1');
     const [postData, setPostData] = useState<PostData | null>(null);
 
@@ -40,10 +41,11 @@ export function FetchDataInUseEffect(): JSX.Element {
     };
 
     return (
-        <div>
+        <ChapterWrapper title="Fetch data in useEffect" subtitle="Side effects, useEffect">
             <Toolbar>
                 Post ID <input type="number" value={postId} onChange={handleInputChange} />
             </Toolbar>
+
             {loading ? (
                 <LoadingSpinner />
             ) : error ? (
@@ -54,6 +56,6 @@ export function FetchDataInUseEffect(): JSX.Element {
             ) : (
                 <PropsTable title={`/posts/${postId}`} data={postData} />
             )}
-        </div>
+        </ChapterWrapper>
     );
 }

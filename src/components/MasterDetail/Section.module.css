@@ -4,23 +4,32 @@
 }
 
 .sectionTitle {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     display: flex;
-    gap: 10px;
     align-items: center;
     cursor: pointer;
+    justify-content: space-between;
 }
 
 .expanded {
-    font-weight: 600;
-    text-shadow: var(--active-text-shadow);
+    border-right: 2px solid #1890FF;
+    background-color: #E6F7FF;
+    color: #1890FF;
+    /* font-weight: 600;
+    text-shadow: var(--active-text-shadow); */
 }
 
 .sectionTitle:hover {
-    text-shadow: 2px 2px #e1ccff;
+    background-color: #ededed;
+    /* text-shadow: 2px 2px #e1ccff; */
 }
 
 .sectionContent {
     padding: 8px;
     border-left: 1px solid var(--divider-color);
     border-top: 1px solid var(--divider-color);
+    border-bottom: 1px solid var(--divider-color);
 }

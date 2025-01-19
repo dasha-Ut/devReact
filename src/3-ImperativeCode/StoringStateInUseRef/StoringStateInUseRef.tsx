@@ -1,4 +1,4 @@
-import { UseCounter } from '../../1-HooksBasics/CustomHooks/UseCounter';
+import { useCounter } from '../../1-HooksBasics/CustomHooks/UseCounter';
 import { useLoggedLifecycle } from '../../hooks/useLoggedLifecycle';
 import { logTagged } from '../../utils/logTagged';
 import { ValueLabel } from '../../components/ValueLabel/ValueLabel';
@@ -6,9 +6,10 @@ import { Button } from "../../components/Button/Button";
 import { Toolbar } from '../../components/Toolbar/Toolbar';
 import { useRefState } from './useRefState';
 import { useUpdateEffect } from './useUpdateEffect';
+import { ChapterWrapper } from '../../components/ChapterWrapper/ChapterWrapper';
 
-export function StoringStateInUseRef(): JSX.Element {
-    const { value: stateClicks, increase: increaseStateClicks } = UseCounter();
+export function StoringStateInUseRef() {
+    const { value: stateClicks, increase: increaseStateClicks } = useCounter();
     // useRef don't update render
     const [refStateClicks, setRefStateClicks] = useRefState<number>(0);
 
@@ -24,7 +25,7 @@ export function StoringStateInUseRef(): JSX.Element {
     };
 
     return (
-        <div>
+        <ChapterWrapper title="Storing state in useRef" subtitle="useUpdateEffect">
             <div>useState clicks:</div>
             <Toolbar>
                 <ValueLabel value={stateClicks} minWidth="100px" />
@@ -36,6 +37,6 @@ export function StoringStateInUseRef(): JSX.Element {
                 <ValueLabel value={refStateClicks} minWidth="100px" />
                 <Button text="+1" onClick={increaseRefStateClicks} />
             </Toolbar>
-        </div>
+        </ChapterWrapper>
     );
 }

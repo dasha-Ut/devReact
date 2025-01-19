@@ -1,8 +1,22 @@
 .expandToggle {
     font-size: 24px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 .expandToggle:hover {
     text-shadow: var(--active-text-shadow);
 }
+
+._pos_right_middle {
+         font-size: 34px;
+         position: absolute;
+         right: -28px;
+         top: 5px;
+         width: 54px;
+         text-align: center;
+         background-color: transparent;
+         z-index: 3;
+         height: 65px;
+         padding-top: 20px;
+       }

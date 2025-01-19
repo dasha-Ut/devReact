@@ -1,10 +1,10 @@
 import { useState } from 'react';
-
+import { ChapterWrapper } from '../../components/ChapterWrapper/ChapterWrapper';
 import { EmojisBar } from '../InfiniteLoops/EmojisBar';
 
 const EMOJIS = ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼', '🐻‍❄️', '🐨'];
 
-export function BewareOfInfiniteLoops(): JSX.Element {
+export function BewareOfInfiniteLoops() {
     const [topEmojis, setTopEmojis] = useState<string[]>(EMOJIS);
     const [bottomEmojis, setBottomEmojis] = useState<string[]>([]);
 
@@ -28,9 +28,9 @@ export function BewareOfInfiniteLoops(): JSX.Element {
     // }, [topEmojis]);
 
     return (
-        <>
+        <ChapterWrapper title="Beware of infinite loops" subtitle="Side effects, useEffect">
             <EmojisBar emojis={topEmojis} onClick={addToBottom} />
             <EmojisBar emojis={bottomEmojis} onClick={addToTop} />
-        </>
+        </ChapterWrapper>
     )
 }

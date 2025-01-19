@@ -3,9 +3,11 @@ import { PropsTable } from '../components/PropsTable';
 import { EmojiButton } from '../components/EmojiButton/EmojiButton';
 import { ColoredBlock } from '../components/ColoredBlock/ColoredBlock';
 import { ValueLabel } from '../components/ValueLabel/ValueLabel';
-//import { useRerender } from '../1-HooksBasics/useRerender';
+import { useRerender } from '../1-HooksBasics/useRerender';
 import { useState } from 'react';
 import { logTagged } from '../utils/logTagged';
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
+import { Toolbar } from 'components/Toolbar/Toolbar';
 
 enum UserRole {
     ADMIN = 'admin',
@@ -26,13 +28,13 @@ const DEFAULT_USER: User = {
 
 const EMOJIS: string[] = ['🗺', '🗿', '🏟', '🗼', '🏯', '🎡'];
 
-export function UseStateAndNewRenders(): JSX.Element {
+export function UseStateAndNewRenders() {
     const [emoji, setEmoji] = useState<string>(EMOJIS[0]);
     const [user, setUser] = useState<User>(DEFAULT_USER);
 
-    //const rerender = useRerender();
+    const rerender = useRerender();
 
-    const mapToEmojiButton = (e: string): JSX.Element => {
+    const mapToEmojiButton = (e: string) => {
         const onClick = () => {
             logTagged('setState', e);
             setEmoji(e);
@@ -53,21 +55,24 @@ export function UseStateAndNewRenders(): JSX.Element {
     };
 
     return (
-        <div>
-            <h3>useState and new renders</h3>
-            <h5>Hooks basics, useState</h5>
+        <ChapterWrapper
+            title="useState and new renders"
+            subtitle="Hooks basics, useState"
+            rerender={rerender}
+        >
             <ColoredBlock style={{ marginBottom: 24 }}>
-                I'm a render indicator. If I will change my background color - new render was triggered.
+                I'm a render indicator. If I will change my background color - new render was
+                triggered.
             </ColoredBlock>
 
-            <div>{EMOJIS.map(mapToEmojiButton)}</div>
+            <Toolbar>{EMOJIS.map(mapToEmojiButton)}</Toolbar>
             <ValueLabel value={emoji} />
 
-            <div>
+            <Toolbar>
                 <Button text="Set user constant" onClick={setUserConstant} />
                 <Button text="Set object literal" onClick={setObjectLiteral} />
-            </div>
+            </Toolbar>
             <PropsTable title="User" data={user} />
-        </div>
+        </ChapterWrapper>
     );
 }

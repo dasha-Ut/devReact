@@ -1,16 +1,15 @@
 import { Toolbar } from '../../components/Toolbar/Toolbar';
-
+import { ChapterWrapper } from 'components/ChapterWrapper/ChapterWrapper';
 import { useState } from 'react';
-
 import { HandShape } from './HandShape';
 import { HandShapeEmoji } from './HandShapeEmoji';
 import { RockScissorsPaperInput } from './RockScissorsPaperInput';
 
-export function RockScissorsPaper(): JSX.Element {
+export function RockScissorsPaper() {
     const [currentValue, setCurrentValue] = useState<HandShape>('✊');
 
     return (
-        <div> Rock Scissors Paper
+        <ChapterWrapper title="Rock Scissors Paper">
             <Toolbar>
                 <RockScissorsPaperInput currentValue={currentValue} onChange={setCurrentValue} />
             </Toolbar>
@@ -18,6 +17,6 @@ export function RockScissorsPaper(): JSX.Element {
             <Toolbar>
                 Current value: <HandShapeEmoji value={currentValue} />
             </Toolbar>
-        </div>
+        </ChapterWrapper>
     );
 }
