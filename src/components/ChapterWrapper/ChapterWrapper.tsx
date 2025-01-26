@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import { EmojiButton } from '../EmojiButton/EmojiButton';
 import { FlexFiller } from '../FlexFiller';
 import classes from './ChapterWrapper.module.css';
@@ -12,7 +12,7 @@ export interface ChapterWrapperProps {
     rerender?: () => void;
 }
 
-export function ChapterWrapper(props: ChapterWrapperProps): JSX.Element {
+export function ChapterWrapper(props: ChapterWrapperProps) {
     const { title, subtitle, children, rerender } = props;
 
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ export function ChapterWrapper(props: ChapterWrapperProps): JSX.Element {
                     <h2>{title}</h2>
                     <FlexFiller />
                     {rerender && <EmojiButton emoji="🔄" tooltip="RErender" onClick={rerender} />}
-                    <EmojiButton emoji="❌" tooltip="Close" onClick={closeChapter} />
+                    <EmojiButton emoji={<IoIosCloseCircleOutline color={'red'} />} tooltip="Close" onClick={closeChapter} />
                 </div>
                 <h3>{subtitle}</h3>
             </div>

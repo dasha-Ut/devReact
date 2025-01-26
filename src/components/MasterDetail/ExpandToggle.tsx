@@ -1,7 +1,7 @@
 import classes from './ExpandToggle.module.css';
 import { MdArrowDropUp, MdArrowDropDown } from "react-icons/md";
-import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
-
+import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
+import 'index.css'
 type Props = {
     sideNav?: boolean;
     expanded: boolean;
@@ -14,7 +14,10 @@ export function ExpandToggle({ expanded, onClick, sideNav }: Props) {
         case true:
             return <div className={classes.expandToggle + ' ' + classes._pos_right_middle}
                 onClick={onClick}>
-                {expanded ? <IoIosArrowDropleftCircle color="blue" /> : <IoIosArrowDroprightCircle color="blue" />}
+                <div className='avatar_circle white'>
+                    {expanded ? <IoIosArrowDropleft color="#1890FF" /> : <IoIosArrowDropright color="#1890FF" />}
+                </div>
+
             </div>
         case false: default:
             return <div className={classes.expandToggle}
