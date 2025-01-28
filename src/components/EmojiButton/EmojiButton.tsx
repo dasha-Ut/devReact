@@ -1,13 +1,13 @@
 import { MouseEventHandler, ReactNode } from 'react';
-
+import ReactTooltip from 'react-tooltip';
 import classes from './EmojiButton.module.css';
 
-export interface EmojiButtonProps {
+export type EmojiButtonProps = {
     emoji: string;
     onClick: MouseEventHandler<HTMLButtonElement>;
     tooltip?: string;
     disabled?: boolean;
-}
+};
 
 export function EmojiButton({ emoji, onClick, disabled, tooltip }: EmojiButtonProps) {
     return (
@@ -17,7 +17,14 @@ export function EmojiButton({ emoji, onClick, disabled, tooltip }: EmojiButtonPr
                     {emoji}
                 </button>
             </div>
-
+            <ReactTooltip
+                data-tooltip-content={tooltip}
+                effect="float"
+                type="dark"
+                place="bottom"
+                wrapper="span"
+                delayShow={500}
+            />
         </>
     );
-} 
+}

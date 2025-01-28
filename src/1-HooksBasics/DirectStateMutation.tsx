@@ -75,6 +75,7 @@ export function DirectStateMutation() {
 
             <Toolbar>
                 <EmojiButton
+                    tooltip="WHAT"
                     emoji="👤"
                     onClick={() => setUserEmoji('👤')}
                     disabled={userEmoji === '👤'}
