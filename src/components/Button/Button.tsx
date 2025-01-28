@@ -1,23 +1,19 @@
-import { MouseEventHandler } from 'react';
-
+// import { MouseEventHandler } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import classes from './Button.module.css';
+import { cn } from 'utils/cn';
 
-export interface ButtonProps {
-    text: string;
-    customStyle?: string;
-    iconClass?: string;
-    onClick: MouseEventHandler<HTMLButtonElement>;
-    disabled?: boolean;
-}
-
-// export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> & {
+// export interface ButtonProps {
 //     text: string;
-// };
+//     onClick: MouseEventHandler<HTMLButtonElement>;
+//     disabled?: boolean;
+// }
 
+export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> & {
+    text: string;
+};
 
-export function Button(props: ButtonProps) {
-    const { text, onClick, customStyle = '', iconClass = '', disabled = false } = props;
-
+export function Button({ text, className, ...restProps }: ButtonProps) {
     return (
 
         // <button
@@ -30,11 +26,13 @@ export function Button(props: ButtonProps) {
         //     <i className= {iconClass + (disabled ? ' grey-text' : ' blue-text') + (text ? 'left' : '')}></i>
         //     {text}
         // </button>
-
-        <button className={classes.button} onClick={onClick} disabled={disabled}>
-            <i className={iconClass + (disabled ? ' grey-text' : ' blue-text') + (text ? 'left' : '')}></i>
+        <button className={cn(classes.button, className)} {...restProps}>
             {text}
         </button>
+        // <button className={classes.button} onClick={onClick} disabled={disabled}>
+        //     {/* <i className={iconClass + (disabled ? ' grey-text' : ' blue-text') + (text ? 'left' : '')}></i> */}
+        //     {text}
+        // </button>
     );
 }
 

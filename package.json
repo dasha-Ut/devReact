@@ -29,7 +29,8 @@
     "check-and-fix": "npm run ts-lint && npm run format && npm run lint",
     "docs:dev": "vitepress dev y",
     "docs:build": "vitepress build y",
-    "docs:preview": "vitepress preview y"
+    "docs:preview": "vitepress preview y",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@rematch/core": "2.2.0",
@@ -58,6 +59,8 @@
     "@storybook/addon-essentials": "^8.4.5",
     "@storybook/addon-interactions": "^8.4.5",
     "@storybook/addon-links": "^8.4.5",
+    "@storybook/addon-onboarding": "8.5.1",
+    "@storybook/blocks": "8.5.1",
     "@storybook/react": "^8.4.5",
     "@storybook/react-vite": "^8.4.5",
     "@storybook/test": "^8.4.5",
