@@ -6,7 +6,7 @@ import { RouterPath } from 'config/RouterPath';
 // import { UseElementSizeExample } from './UseElementSizeExample';
 // import { UseHistoryExample } from './UseHistoryExample';
 import { UseHoveredExample } from './UseHoveredExample';
-// import { UsePreviousExample } from './UsePreviousExample';
+import { UsePreviousExample } from './UsePreviousExample';
 // import { UseThrottledStateExample } from './UseThrottledStateExample';
 // import { UseTimeoutExample } from './useTimeout/UseTimeoutExample';
 
@@ -19,13 +19,13 @@ export function MoreCustomHooksSection() {
                 path={RouterPath.USE_HOVERED}
                 element={<UseHoveredExample />}
             />
-            {/* <Chapter
+            <Chapter
                 emoji="🔴"
                 title="usePreviousRenderValue"
                 path={RouterPath.USE_PREVIOUS_RENDER_VALUE}
                 element={<UsePreviousExample />}
             />
-            <Chapter
+            {/* <Chapter
                 emoji="🟢"
                 title="useHistory"
                 path={RouterPath.USE_HISTORY}
