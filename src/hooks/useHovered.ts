@@ -23,8 +23,10 @@ export function useHovered(): UseHovered {
         }
 
         elementRef.current = element;
+      
         mouseOverRef.current = () => setHovered(true);
         mouseOutRef.current = () => setHovered(false);
+        
         element.addEventListener('mouseover', mouseOverRef.current);
         element.addEventListener('mouseout', mouseOutRef.current);
     }, []);
