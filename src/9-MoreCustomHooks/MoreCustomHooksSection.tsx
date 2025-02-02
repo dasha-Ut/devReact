@@ -4,7 +4,7 @@ import { RouterPath } from 'config/RouterPath';
 // import { UseClickOutsideExample } from './UseClickOutsideExample';
 // import { UseDebouncedStateExample } from './UseDebouncedStateExample';
 // import { UseElementSizeExample } from './UseElementSizeExample';
-// import { UseHistoryExample } from './UseHistoryExample';
+import { UseHistoryExample } from './UseHistoryExample';
 import { UseHoveredExample } from './UseHoveredExample';
 import { UsePreviousExample } from './UsePreviousExample';
 // import { UseThrottledStateExample } from './UseThrottledStateExample';
@@ -25,13 +25,13 @@ export function MoreCustomHooksSection() {
                 path={RouterPath.USE_PREVIOUS_RENDER_VALUE}
                 element={<UsePreviousExample />}
             />
-            {/* <Chapter
+            <Chapter
                 emoji="🟢"
                 title="useHistory"
                 path={RouterPath.USE_HISTORY}
                 element={<UseHistoryExample />}
             />
-            <Section title="Throttle, debounce">
+            {/* <Section title="Throttle, debounce">
                 <Chapter
                     emoji="🟠"
                     title="Track mouse position"
