@@ -1,13 +1,13 @@
 import { Chapter, Section } from 'components/MasterDetail';
 import { RouterPath } from 'config/RouterPath';
-// import { TrackMousePosition } from './TrackMousePosition';
+import { TrackMousePosition } from './TrackMousePosition';
 // import { UseClickOutsideExample } from './UseClickOutsideExample';
 // import { UseDebouncedStateExample } from './UseDebouncedStateExample';
 // import { UseElementSizeExample } from './UseElementSizeExample';
 import { UseHistoryExample } from './UseHistoryExample';
 import { UseHoveredExample } from './UseHoveredExample';
 import { UsePreviousExample } from './UsePreviousExample';
-// import { UseThrottledStateExample } from './UseThrottledStateExample';
+import { UseThrottledStateExample } from './UseThrottledStateExample';
 // import { UseTimeoutExample } from './useTimeout/UseTimeoutExample';
 
 export function MoreCustomHooksSection() {
@@ -31,7 +31,7 @@ export function MoreCustomHooksSection() {
                 path={RouterPath.USE_HISTORY}
                 element={<UseHistoryExample />}
             />
-            {/* <Section title="Throttle, debounce">
+            <Section title="Throttle, debounce">
                 <Chapter
                     emoji="🟠"
                     title="Track mouse position"
@@ -44,14 +44,14 @@ export function MoreCustomHooksSection() {
                     path={RouterPath.USE_THROTTLED_STATE}
                     element={<UseThrottledStateExample />}
                 />
-                <Chapter
+                {/*   <Chapter
                     emoji="🔵"
                     title="useDebouncedState"
                     path={RouterPath.USE_DEBOUNCED_STATE}
                     element={<UseDebouncedStateExample />}
-                />
+                />*/}
             </Section>
-            <Chapter
+            {/* <Chapter
                 emoji="⏲"
                 title="useTimeout"
                 path={RouterPath.USE_TIMEOUT}
