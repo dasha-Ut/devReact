@@ -2,7 +2,7 @@ import { Chapter, Section } from 'components/MasterDetail';
 import { RouterPath } from 'config/RouterPath';
 import { TrackMousePosition } from './TrackMousePosition';
 // import { UseClickOutsideExample } from './UseClickOutsideExample';
-// import { UseDebouncedStateExample } from './UseDebouncedStateExample';
+import { UseDebouncedStateExample } from './UseDebouncedStateExample';
 // import { UseElementSizeExample } from './UseElementSizeExample';
 import { UseHistoryExample } from './UseHistoryExample';
 import { UseHoveredExample } from './UseHoveredExample';
@@ -44,12 +44,12 @@ export function MoreCustomHooksSection() {
                     path={RouterPath.USE_THROTTLED_STATE}
                     element={<UseThrottledStateExample />}
                 />
-                {/*   <Chapter
+                <Chapter
                     emoji="🔵"
                     title="useDebouncedState"
                     path={RouterPath.USE_DEBOUNCED_STATE}
                     element={<UseDebouncedStateExample />}
-                />*/}
+                />
             </Section>
             {/* <Chapter
                 emoji="⏲"
