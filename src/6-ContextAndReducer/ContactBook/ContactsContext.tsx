@@ -18,8 +18,8 @@ export function useContacts() {
     return useContext(ContactsContext);
 }
 
-export function ContactsProvider({ children }: { children: ReactNode }): JSX.Element {
-    const value = useReducer<ContactsReducer>(contactsReducer, initialState);
+export function ContactsProvider({ children }: { children: ReactNode }) {
+    const value = useReducer(contactsReducer, initialState);
 
     return <ContactsContext.Provider value={value}>{children}</ContactsContext.Provider>;
 }

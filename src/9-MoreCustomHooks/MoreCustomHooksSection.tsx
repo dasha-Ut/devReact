@@ -8,7 +8,7 @@ import { UseHistoryExample } from './UseHistoryExample';
 import { UseHoveredExample } from './UseHoveredExample';
 import { UsePreviousExample } from './UsePreviousExample';
 import { UseThrottledStateExample } from './UseThrottledStateExample';
-// import { UseTimeoutExample } from './useTimeout/UseTimeoutExample';
+import { UseTimeoutExample } from './useTimeout/UseTimeoutExample';
 
 export function MoreCustomHooksSection() {
     return (
@@ -51,13 +51,13 @@ export function MoreCustomHooksSection() {
                     element={<UseDebouncedStateExample />}
                 />
             </Section>
-            {/* <Chapter
+            <Chapter
                 emoji="⏲"
                 title="useTimeout"
                 path={RouterPath.USE_TIMEOUT}
                 element={<UseTimeoutExample />}
             />
-            <Chapter
+            {/*  <Chapter
                 emoji="🎯"
                 title="useClickOutside"
                 path={RouterPath.USE_CLICK_OUTSIDE}
