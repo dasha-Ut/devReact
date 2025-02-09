@@ -3,7 +3,7 @@ import { RouterPath } from 'config/RouterPath';
 import { TrackMousePosition } from './TrackMousePosition';
 import { UseClickOutsideExample } from './UseClickOutsideExample';
 import { UseDebouncedStateExample } from './UseDebouncedStateExample';
-// import { UseElementSizeExample } from './UseElementSizeExample';
+import { UseElementSizeExample } from './UseElementSizeExample';
 import { UseHistoryExample } from './UseHistoryExample';
 import { UseHoveredExample } from './UseHoveredExample';
 import { UsePreviousExample } from './UsePreviousExample';
@@ -63,12 +63,12 @@ export function MoreCustomHooksSection() {
                 path={RouterPath.USE_CLICK_OUTSIDE}
                 element={<UseClickOutsideExample />}
             />
-            {/*    <Chapter
+            <Chapter
                 emoji="📐"
                 title="useElementSize"
                 path={RouterPath.USE_ELEMENT_SIZE}
                 element={<UseElementSizeExample />}
-            /> */}
+            />
         </Section>
     );
 }
