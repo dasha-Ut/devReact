@@ -1,11 +1,10 @@
 import { useCallback, useState, useRef, useEffect } from 'react';
-import { RefCallback } from 'types/RefCallback';
 
 export type Size = [number, number];
 
 const INITIAL_SIZE: Size = [0, 0];
 
-export function useElementSize(): [Size, RefCallback] {
+export function useElementSize() {
     const [size, setSize] = useState<Size>(INITIAL_SIZE);
     const observerRef = useRef<ResizeObserver | null>(null);
 
@@ -25,5 +24,6 @@ export function useElementSize(): [Size, RefCallback] {
         return () => observerRef.current?.disconnect();
     }, []);
 
-    return [size, refCallback];
+    // use const assertion for custom hooks, to don't write custom types of fn
+    return [size, refCallback] as const;
 }
