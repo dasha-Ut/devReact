@@ -1,7 +1,7 @@
 import { Chapter, Section } from 'components/MasterDetail';
 import { RouterPath } from 'config/RouterPath';
 import { TrackMousePosition } from './TrackMousePosition';
-// import { UseClickOutsideExample } from './UseClickOutsideExample';
+import { UseClickOutsideExample } from './UseClickOutsideExample';
 import { UseDebouncedStateExample } from './UseDebouncedStateExample';
 // import { UseElementSizeExample } from './UseElementSizeExample';
 import { UseHistoryExample } from './UseHistoryExample';
@@ -57,13 +57,13 @@ export function MoreCustomHooksSection() {
                 path={RouterPath.USE_TIMEOUT}
                 element={<UseTimeoutExample />}
             />
-            {/*  <Chapter
+            <Chapter
                 emoji="🎯"
                 title="useClickOutside"
                 path={RouterPath.USE_CLICK_OUTSIDE}
                 element={<UseClickOutsideExample />}
             />
-            <Chapter
+            {/*    <Chapter
                 emoji="📐"
                 title="useElementSize"
                 path={RouterPath.USE_ELEMENT_SIZE}
