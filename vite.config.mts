@@ -17,3 +17,4 @@ export default defineConfig({
     setupFiles: 'src/setupTests.ts',
   },
 });
+// environment: 'jsdom', - environment, where tests will start. creates an imitation of dom tree
