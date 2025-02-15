@@ -3,7 +3,6 @@ import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 import { Button } from './Button';
 
-
 describe('Button', () => {
 
     test('click handler should be called on click', async () => {
