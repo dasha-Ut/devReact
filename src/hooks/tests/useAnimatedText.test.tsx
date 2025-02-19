@@ -13,6 +13,5 @@ describe('useAnimatedText hook', () => {
         expect(await screen.findByText('ani')).toBeVisible();
         expect(await screen.findByText('anima')).toBeVisible();
         expect(await screen.findByText('animat')).toBeVisible();
-
     });
 })
